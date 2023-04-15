@@ -1,5 +1,5 @@
-if !has("python")
-  echo "vim has to be compiled with +python to run this"
+if !has("python3")
+  echo "vim has to be compiled with +python3 to run this"
   finish
 endif
 
@@ -10,7 +10,7 @@ endif
 
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
-python << EOF
+python3 << EOF
 import sys
 from os.path import normpath, join
 import vim
@@ -23,11 +23,11 @@ EOF
 
 
 function! CreateCompletion(max_tokens)
-  python plugin.create_completion()
+  python3 plugin.create_completion()
 endfunction
 
 function! CreateCompletionLine()
-  python plugin.create_completion(stop='\n')
+  python3 plugin.create_completion(stop='\n')
 endfunction
 
 
