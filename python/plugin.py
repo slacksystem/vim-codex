@@ -61,7 +61,7 @@ def complete_input_max_length(
 ):
     input_prompt = input_prompt[-max_input_length:]
     response = openai.Completion.create(
-        engine="code-davinci-001",
+        engine="code-davinci-003",
         prompt=input_prompt,
         best_of=1,
         temperature=0.5,
